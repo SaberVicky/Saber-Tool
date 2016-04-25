@@ -11,6 +11,8 @@
 #import "SLRootLeftCell.h"
 #import "SLButtonListView.h"
 
+#import "SLIdCardViewController.h"
+
 
 @interface SLRootLeftViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -46,7 +48,17 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    switch (indexPath.item) {
+        case 0:
+        {
+            SLIdCardViewController *vc = [[SLIdCardViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 #pragma mark --- Private Method

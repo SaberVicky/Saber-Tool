@@ -12,8 +12,10 @@
 
 #import "Masonry.h"
 #import "SLNeworking.h"
+#import "SLLoadingView.h"
 
 #import "UILabel+Category.h"
+#import "NSObject+Category.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
@@ -23,5 +25,7 @@
 #define kScreen_Width           [UIScreen mainScreen].bounds.size.width
 
 #define    kWS(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+#define kAppKey_jiSu             @"73ee3abfb42b27a6"
 
 #endif /* PrefixHeader_pch */

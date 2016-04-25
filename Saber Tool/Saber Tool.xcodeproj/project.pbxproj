@@ -39,6 +39,16 @@
 		3BEB6B711CCE2695006554FA /* SLCircleMenuLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B691CCE2695006554FA /* SLCircleMenuLoader.m */; };
 		3BEB6B721CCE2695006554FA /* SLNeworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B6C1CCE2695006554FA /* SLNeworking.m */; };
 		3BEB6B751CCE26B0006554FA /* UILabel+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B741CCE26B0006554FA /* UILabel+Category.m */; };
+		3BEB6B7A1CCE63FB006554FA /* SLIdCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B791CCE63FB006554FA /* SLIdCardViewController.m */; };
+		3BEB6B7E1CCE68A8006554FA /* SLLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B7D1CCE68A8006554FA /* SLLoadingView.m */; };
+		3BEB6B871CCE6AFA006554FA /* loading_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B801CCE6AFA006554FA /* loading_1@2x.png */; };
+		3BEB6B881CCE6AFA006554FA /* loading_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B811CCE6AFA006554FA /* loading_2@2x.png */; };
+		3BEB6B891CCE6AFA006554FA /* loading_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B821CCE6AFA006554FA /* loading_3@2x.png */; };
+		3BEB6B8A1CCE6AFA006554FA /* loading_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B831CCE6AFA006554FA /* loading_4@2x.png */; };
+		3BEB6B8B1CCE6AFA006554FA /* loading_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B841CCE6AFA006554FA /* loading_5@2x.png */; };
+		3BEB6B8C1CCE6AFA006554FA /* loading_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B851CCE6AFA006554FA /* loading_6@2x.png */; };
+		3BEB6B8D1CCE6AFA006554FA /* loadMore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BEB6B861CCE6AFA006554FA /* loadMore@2x.png */; };
+		3BEB6B901CCE70AB006554FA /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB6B8F1CCE70AB006554FA /* NSObject+Category.m */; };
 		6663CFF0CBA061FD72FFBFA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 909E912C412EB06599FDE060 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +108,19 @@
 		3BEB6B6C1CCE2695006554FA /* SLNeworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNeworking.m; sourceTree = "<group>"; };
 		3BEB6B731CCE26B0006554FA /* UILabel+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Category.h"; sourceTree = "<group>"; };
 		3BEB6B741CCE26B0006554FA /* UILabel+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Category.m"; sourceTree = "<group>"; };
+		3BEB6B781CCE63FB006554FA /* SLIdCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLIdCardViewController.h; sourceTree = "<group>"; };
+		3BEB6B791CCE63FB006554FA /* SLIdCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLIdCardViewController.m; sourceTree = "<group>"; };
+		3BEB6B7C1CCE68A8006554FA /* SLLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLLoadingView.h; sourceTree = "<group>"; };
+		3BEB6B7D1CCE68A8006554FA /* SLLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLLoadingView.m; sourceTree = "<group>"; };
+		3BEB6B801CCE6AFA006554FA /* loading_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_1@2x.png"; sourceTree = "<group>"; };
+		3BEB6B811CCE6AFA006554FA /* loading_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_2@2x.png"; sourceTree = "<group>"; };
+		3BEB6B821CCE6AFA006554FA /* loading_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_3@2x.png"; sourceTree = "<group>"; };
+		3BEB6B831CCE6AFA006554FA /* loading_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_4@2x.png"; sourceTree = "<group>"; };
+		3BEB6B841CCE6AFA006554FA /* loading_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_5@2x.png"; sourceTree = "<group>"; };
+		3BEB6B851CCE6AFA006554FA /* loading_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_6@2x.png"; sourceTree = "<group>"; };
+		3BEB6B861CCE6AFA006554FA /* loadMore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadMore@2x.png"; sourceTree = "<group>"; };
+		3BEB6B8E1CCE70AB006554FA /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
+		3BEB6B8F1CCE70AB006554FA /* NSObject+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
 		631F7C50515963412A1EAE2B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		909E912C412EB06599FDE060 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,6 +189,7 @@
 				3BB4DE441CCDC353001382D9 /* SLRoot_Right */,
 				3BB4DE631CCDEC0F001382D9 /* SLSetting */,
 				3BB4DE131CCDB716001382D9 /* SLNote */,
+				3BEB6B761CCE63EB006554FA /* SLIdCard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -219,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				3BB4DE4A1CCDC410001382D9 /* Image */,
+				3BEB6B7F1CCE6AFA006554FA /* Loading */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -321,6 +346,8 @@
 			children = (
 				3BEB6B731CCE26B0006554FA /* UILabel+Category.h */,
 				3BEB6B741CCE26B0006554FA /* UILabel+Category.m */,
+				3BEB6B8E1CCE70AB006554FA /* NSObject+Category.h */,
+				3BEB6B8F1CCE70AB006554FA /* NSObject+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -328,6 +355,7 @@
 		3BEB6B5D1CCE2695006554FA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				3BEB6B7B1CCE689E006554FA /* SLLoadingView */,
 				3BEB6B5E1CCE2695006554FA /* GooeySlideMenu */,
 				3BEB6B631CCE2695006554FA /* SLCircleMenu */,
 				3BEB6B6A1CCE2695006554FA /* SLNetworking */,
@@ -366,6 +394,47 @@
 				3BEB6B6C1CCE2695006554FA /* SLNeworking.m */,
 			);
 			path = SLNetworking;
+			sourceTree = "<group>";
+		};
+		3BEB6B761CCE63EB006554FA /* SLIdCard */ = {
+			isa = PBXGroup;
+			children = (
+				3BEB6B771CCE63EB006554FA /* Controller */,
+			);
+			path = SLIdCard;
+			sourceTree = "<group>";
+		};
+		3BEB6B771CCE63EB006554FA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3BEB6B781CCE63FB006554FA /* SLIdCardViewController.h */,
+				3BEB6B791CCE63FB006554FA /* SLIdCardViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3BEB6B7B1CCE689E006554FA /* SLLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				3BEB6B7C1CCE68A8006554FA /* SLLoadingView.h */,
+				3BEB6B7D1CCE68A8006554FA /* SLLoadingView.m */,
+			);
+			path = SLLoadingView;
+			sourceTree = "<group>";
+		};
+		3BEB6B7F1CCE6AFA006554FA /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				3BEB6B801CCE6AFA006554FA /* loading_1@2x.png */,
+				3BEB6B811CCE6AFA006554FA /* loading_2@2x.png */,
+				3BEB6B821CCE6AFA006554FA /* loading_3@2x.png */,
+				3BEB6B831CCE6AFA006554FA /* loading_4@2x.png */,
+				3BEB6B841CCE6AFA006554FA /* loading_5@2x.png */,
+				3BEB6B851CCE6AFA006554FA /* loading_6@2x.png */,
+				3BEB6B861CCE6AFA006554FA /* loadMore@2x.png */,
+			);
+			name = Loading;
+			path = Image/Loading;
 			sourceTree = "<group>";
 		};
 		E67C7FB49A7C7C66C907F858 /* Pods */ = {
@@ -446,16 +515,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB4DE551CCDC41E001382D9 /* benefit_press_icon@2x.png in Resources */,
+				3BEB6B8B1CCE6AFA006554FA /* loading_5@2x.png in Resources */,
 				3BB4DE561CCDC41E001382D9 /* my_default_icon@2x.png in Resources */,
 				3BB17C4B1CC7638200024581 /* LaunchScreen.storyboard in Resources */,
 				3BB4DE621CCDE8EA001382D9 /* jiqimao.png in Resources */,
 				3BB4DE541CCDC41E001382D9 /* benefit_default_icon@2x.png in Resources */,
 				3BB4DE5A1CCDC41E001382D9 /* wash_default_icon@2x.png in Resources */,
+				3BEB6B871CCE6AFA006554FA /* loading_1@2x.png in Resources */,
+				3BEB6B8D1CCE6AFA006554FA /* loadMore@2x.png in Resources */,
 				3BB4DE851CCDFD85001382D9 /* rightButton.png in Resources */,
 				3BB17C481CC7638200024581 /* Assets.xcassets in Resources */,
+				3BEB6B891CCE6AFA006554FA /* loading_3@2x.png in Resources */,
 				3BB4DE591CCDC41E001382D9 /* order_press_icon@2x.png in Resources */,
+				3BEB6B8C1CCE6AFA006554FA /* loading_6@2x.png in Resources */,
+				3BEB6B881CCE6AFA006554FA /* loading_2@2x.png in Resources */,
 				3BB4DE5B1CCDC41E001382D9 /* wash_press_icon@2x.png in Resources */,
 				3BB4DE571CCDC41E001382D9 /* my_press_icon@2x.png in Resources */,
+				3BEB6B8A1CCE6AFA006554FA /* loading_4@2x.png in Resources */,
 				3BB4DE581CCDC41E001382D9 /* order_default_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,12 +592,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BEB6B6E1CCE2695006554FA /* SlideMenuButton.m in Sources */,
+				3BEB6B7A1CCE63FB006554FA /* SLIdCardViewController.m in Sources */,
+				3BEB6B901CCE70AB006554FA /* NSObject+Category.m in Sources */,
 				3BEB6B701CCE2695006554FA /* SLCircleMenuButton.m in Sources */,
 				3BEB6B5A1CCE24A7006554FA /* SLRootLeftCell.m in Sources */,
 				3BB4DE701CCDEE27001382D9 /* SLCustomTabbarViewController.m in Sources */,
 				3BB4DE831CCDFA0A001382D9 /* SLLineLayout.m in Sources */,
 				3BB4DE471CCDC353001382D9 /* SLRootMiddleViewController.m in Sources */,
 				3BB4DE7D1CCDF8E8001382D9 /* SLRootLeftViewController.m in Sources */,
+				3BEB6B7E1CCE68A8006554FA /* SLLoadingView.m in Sources */,
 				3BEB6B721CCE2695006554FA /* SLNeworking.m in Sources */,
 				3BEB6B751CCE26B0006554FA /* UILabel+Category.m in Sources */,
 				3BB4DE711CCDEE27001382D9 /* SLNavigationViewController.m in Sources */,
