@@ -11,16 +11,14 @@
 #import "SLRootLeftCell.h"
 #import "SLButtonListView.h"
 
-#import "SLIdCardViewController.h"
-
+#import "SLRootLeftLogic.h"
 
 @interface SLRootLeftViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, assign) BOOL isAnimating;
-@property (nonatomic, assign) BOOL isOpen;
-@property (nonatomic, assign) NSInteger currentCollectionType;
 @property (nonatomic, strong) SLButtonListView *popView;
+
+@property (nonatomic, strong) SLRootLeftLogic *rootLeftLogic;
 
 @end
 
@@ -28,37 +26,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _isOpen = NO;
-    _isAnimating = NO;
-    
+    self.navigationItem.title = @"Saber Tool";
+    _rootLeftLogic = [[SLRootLeftLogic alloc] init];
     [self setupUI];
 }
 
 #pragma mark --- UICollectionView Delegate / DataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 30;
+    return _rootLeftLogic.toolArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SLRootLeftCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"noteCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
-    [cell setupUIWithData];
+    
+    [cell setupUIWithData:_rootLeftLogic.toolArray[indexPath.item]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.item) {
-        case 0:
-        {
-            SLIdCardViewController *vc = [[SLIdCardViewController alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-            break;
-            
-        default:
-            break;
-    }
+    
+    UIViewController *vc = [[NSClassFromString([_rootLeftLogic.toolArray[indexPath.item] objectForKey:@"vcName"]) alloc] init] ;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark --- Private Method
@@ -84,7 +73,7 @@
         make.height.mas_equalTo(300);
     }];
     [_collectionView registerClass:[SLRootLeftCell class] forCellWithReuseIdentifier:@"noteCell"];
-    _currentCollectionType = 0;
+    _rootLeftLogic.currentCollectionType = 0;
 }
 
 - (void)setupCollectionViewTypeLineDefault {
@@ -103,7 +92,7 @@
         make.edges.mas_equalTo(0);
     }];
     [_collectionView registerClass:[SLRootLeftCell class] forCellWithReuseIdentifier:@"noteCell"];
-    _currentCollectionType = 1;
+    _rootLeftLogic.currentCollectionType = 1;
 }
 
 - (void)setupRightItem {
@@ -117,7 +106,7 @@
     kWS(weakSelf);
     _popView = [[SLButtonListView alloc] initWithFrame:CGRectMake(kScreen_Width - 100, -100, 100, 100) andTitleArray:@[@"线形排列", @"列表排列"]];
     _popView.clickBlock = ^(NSInteger index){
-        if (weakSelf.currentCollectionType != index) {
+        if (weakSelf.rootLeftLogic.currentCollectionType != index) {
             [weakSelf.collectionView removeFromSuperview];
             if (index == 1) {
                 [weakSelf setupCollectionViewTypeLineDefault];
@@ -136,28 +125,28 @@
     
     kWS(weakSelf);
     
-    if (!_isAnimating) {
-        if (!_isOpen) {
+    if (!_rootLeftLogic.isAnimating) {
+        if (!_rootLeftLogic.isOpen) {
             [self.view addSubview:_popView];
-            _isAnimating = YES;
+            _rootLeftLogic.isAnimating = YES;
             [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 weakSelf.popView.frame = CGRectMake(kScreen_Width - 100, 0, 100, 100);
                 
             } completion:^(BOOL finished) {
-                weakSelf.isAnimating = NO;
+                weakSelf.rootLeftLogic.isAnimating = NO;
             }];
         } else {
-            _isAnimating = YES;
+            _rootLeftLogic.isAnimating = YES;
             [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 weakSelf.popView.frame = CGRectMake(kScreen_Width - 100, -100, 100, 100);
             } completion:^(BOOL finished) {
                 [weakSelf.popView removeFromSuperview];
-                weakSelf.isAnimating = NO;
+                weakSelf.rootLeftLogic.isAnimating = NO;
             }];
         }
     }
     
-    _isOpen = !_isOpen;
+    _rootLeftLogic.isOpen = !_rootLeftLogic.isOpen;
 }
 
 @end

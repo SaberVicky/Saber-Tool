@@ -10,6 +10,6 @@
 
 @interface SLRootLeftCell : UICollectionViewCell
 
-- (void)setupUIWithData;
+- (void)setupUIWithData:(NSDictionary *)dic;
 
 @end

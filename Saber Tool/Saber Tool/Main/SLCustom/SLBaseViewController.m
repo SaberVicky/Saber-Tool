@@ -25,6 +25,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"";
+    self.navigationItem.backBarButtonItem = backItem;
+    
     if ([NSStringFromClass([self class]) isEqualToString:@"SLRootLeftViewController"] || [NSStringFromClass([self class]) isEqualToString:@"SLRootMiddleViewController"] || [NSStringFromClass([self class]) isEqualToString:@"SLRootRightViewController"]) {
         
         UIButton *customLeftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];

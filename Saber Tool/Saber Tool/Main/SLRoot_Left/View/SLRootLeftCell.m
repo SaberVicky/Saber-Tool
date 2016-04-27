@@ -39,9 +39,9 @@
     }];
 }
 
-- (void)setupUIWithData {
-    _iconView.image = [UIImage imageNamed:@"jiqimao"];
-    _infoLabel.text = @"工具名字";
+- (void)setupUIWithData:(NSDictionary *)dic {
+//    _iconView.image = [UIImage imageNamed:@"jiqimao"];
+    _infoLabel.text = [dic objectForKey:@"toolName"];
 }
 
 

@@ -96,20 +96,15 @@
 - (void)clickButton {
     kWS(weakSelf);
     [SLLoadingView showInView:self.view];
-    [[SLNeworking shareInstance] requestWithMethod:Get path:@"http://api.jisuapi.com/idcard/query" withParams:@{@"appkey": kAppKey_jiSu, @"idcard": _textField.text} success:^(id result) {
+    [[SLNetworking shareInstance] requestWithMethod:Get path:kAPI_JiSu_IdCard withParams:@{@"appkey": kAppKey_jiSu, @"idcard": _textField.text} andBlock:^(id data, NSError *error) {
         [SLLoadingView hideFromView:weakSelf.view];
-        if (result) {
-            if ([[result objectForKey:@"status"] integerValue] == 0) {
-                NSDictionary *dic = [result objectForKey:@"result"];
+        if (!error) {
+            if ([[data objectForKey:@"status"] integerValue] == 0) {
+                NSDictionary *dic = [data objectForKey:@"result"];
                 [weakSelf setupUIWithData:dic];
             } else {
-                [weakSelf showHudTipStr:[result objectForKey:@"msg"]];
+                [weakSelf showHudTipStr:[data objectForKey:@"msg"]];
             }
-        }
-    } error:^(NSError *error) {
-        [SLLoadingView hideFromView:weakSelf.view];
-        if (error) {
-            
         }
     }];
 }

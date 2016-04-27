@@ -11,7 +11,7 @@
 
 
 #import "Masonry.h"
-#import "SLNeworking.h"
+#import "SLNetworking.h"
 #import "SLLoadingView.h"
 
 #import "UILabel+Category.h"
@@ -23,9 +23,35 @@
 #define kScreen_Bounds          [UIScreen mainScreen].bounds
 #define kScreen_Height          [UIScreen mainScreen].bounds.size.height
 #define kScreen_Width           [UIScreen mainScreen].bounds.size.width
+#define kMarginToScreenEdge     15.0
+
+#define kFontSize(size)         [UIFont systemFontOfSize:size]
+
+#define  kColorWithHex(hex)                         [UIColor colorWithHexString:hex]
+//透明色
+#define kClearColor                                 [UIColor clearColor]
+//白色
+#define kWhiteColor                                 [UIColor  whiteColor]
+//蓝色
+#define kBlueColor                                  kColorWithHex(@"4c97fe")
+//绿色
+#define kGreenColor                                 kColorWithHex(@"1fba3b")
+//粉色
+#define kPinkColor                                  kColorWithHex(@"fa5ea4")
+//紫色
+#define kPurpleColor                                kColorWithHex(@"b87fc8")
+//黄色
+#define kYellowColor                                kColorWithHex(@"f8f2d5")
+//黑色
+#define kBlackColor                                 [UIColor  blackColor]
 
 #define    kWS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 
 #define kAppKey_jiSu             @"73ee3abfb42b27a6"
+#define kAPI_JiSu_News           @"http://api.jisuapi.com/news/get"
+#define kAPI_JiSu_IdCard         @"http://api.jisuapi.com/idcard/query"
+#define kAPI_JiSu_Calendar       @"http://api.jisuapi.com/calendar/query"
+
+#define  kUMeng_appkey           @"57205c0667e58ed26b000130"
 
 #endif /* PrefixHeader_pch */
