@@ -9,11 +9,14 @@
 #import "SLNoteViewController.h"
 #import "SLMonthBill.h"
 #import "SLNoteCell.h"
+#import "SLAddNoteViewController.h"
+#import "SLNote.h"
 
 @interface SLNoteViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *noteArray;
+@property (nonatomic, strong) NSString *balance;
 
 @end
 
@@ -30,7 +33,6 @@
 - (void)setupUI {
     
     self.title = [NSDate stringFromDate:[NSDate date]];
-    self.view.backgroundColor = kWhiteColor;
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -42,18 +44,25 @@
 }
 
 - (void)addNote {
-    
+    kWS(weakSelf);
+    SLAddNoteViewController *vc = [[SLAddNoteViewController alloc] init];
+    vc.addBlock = ^{
+        [weakSelf initNoteArray];
+        [weakSelf.tableView reloadData];
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark --- UITableViewDelegate / DataSource
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     kWS(weakSelf);
-    SLMonthBill *headerView = [[SLMonthBill alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 250)];
-    headerView.addBlock = ^{
+    SLMonthBill *monthBillView = [[SLMonthBill alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 250)];
+    monthBillView.balanceLabel.text = _balance;
+    monthBillView.addBlock = ^{
         [weakSelf addNote];
     };
-    return headerView;
+    return monthBillView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -61,7 +70,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _noteArray.count;
+    return self.noteArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,6 +81,8 @@
         cell.selectionStyle = UITableViewCellSeparatorStyleNone;
     }
     
+    [cell setupUIWithModel:_noteArray[indexPath.row]];
+
     return cell;
 }
 
@@ -83,9 +94,27 @@
 
 - (NSArray *)noteArray {
     if (!_noteArray) {
-        _noteArray =[[NSUserDefaults standardUserDefaults] objectForKey:@"kNoteUserDefault"];
+        [self initNoteArray];
     }
     return _noteArray;
+}
+
+- (void)initNoteArray {
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *path = [pathArray objectAtIndex:0];
+    NSString *filePatch = [path stringByAppendingPathComponent:@"note.plist"];
+    NSArray *array = [[NSArray alloc] initWithContentsOfFile:filePatch];
+    NSMutableArray *mArr = [NSMutableArray array];
+    SLNote *note = [SLNote noteWithDict:array.firstObject];
+    _balance = [NSString stringWithFormat:@"%@元", note.balance];
+    if (!array.firstObject) {
+        _balance = @"0.00元";
+    }
+    for (NSDictionary *dic in array) {
+        SLNote *note = [SLNote noteWithDict:dic];
+        [mArr addObject:note];
+    }
+    _noteArray = mArr;
 }
 
 @end

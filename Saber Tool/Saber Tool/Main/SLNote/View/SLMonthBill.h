@@ -10,6 +10,8 @@
 
 @interface SLMonthBill : UIView
 
+@property (nonatomic, strong) UILabel *balanceLabel;
+
 @property (nonatomic, copy) void (^addBlock)();
 
 @end

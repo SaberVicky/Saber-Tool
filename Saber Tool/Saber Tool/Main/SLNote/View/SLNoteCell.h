@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SLNote;
 
 @interface SLNoteCell : UITableViewCell
+
+- (void)setupUIWithModel:(SLNote *)note;
 
 @end

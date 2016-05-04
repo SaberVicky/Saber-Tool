@@ -48,3 +48,9 @@
 #define  kUMeng_appkey           @"57205c0667e58ed26b000130"
 
 #endif /* PrefixHeader_pch */
+
+#ifdef DEBUG
+#define kDebugLog(s, ...)       NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#else
+# define kDebugLog(...)    NSLog(@"")
+#endif

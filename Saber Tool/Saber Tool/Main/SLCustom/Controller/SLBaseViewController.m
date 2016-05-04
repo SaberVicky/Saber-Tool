@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = kWhiteColor;
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
 }
@@ -59,6 +60,12 @@
         default:
             break;
     }
+}
+
+//监测内存溢出
+-(void)dealloc
+{
+    kDebugLog(@"当前控制器: %@ 已被释放",[self class]);
 }
 
 @end

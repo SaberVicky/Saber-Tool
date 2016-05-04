@@ -10,8 +10,6 @@
 
 @interface SLMonthBill()
 
-@property (nonatomic, strong) UILabel *balanceLabel;
-
 @property (nonatomic, strong) UIButton *addButton;
 
 @end
@@ -42,7 +40,7 @@
         }];
         
         _balanceLabel = [[UILabel alloc] initWithFrame:CGRectZero textColor:kBlackColor font:kFontSize(20)];
-        _balanceLabel.text = @"10000.00元";
+        _balanceLabel.text = @"fsdfsdf";
         [self addSubview:_balanceLabel];
         [_balanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(titleLabel.mas_bottom).offset(kMarginToScreenEdge);

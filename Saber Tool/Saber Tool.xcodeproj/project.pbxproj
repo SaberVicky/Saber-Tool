@@ -16,6 +16,8 @@
 		3B7047E81CD4895300FB977E /* SLMonthBill.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7047E71CD4895300FB977E /* SLMonthBill.m */; };
 		3B7047EB1CD4916100FB977E /* note_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B7047EA1CD4916100FB977E /* note_add.png */; };
 		3B7047EE1CD494BD00FB977E /* SLNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7047ED1CD494BD00FB977E /* SLNoteCell.m */; };
+		3B7047F11CD98E2C00FB977E /* SLAddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7047F01CD98E2C00FB977E /* SLAddNoteViewController.m */; };
+		3B7047F51CD99B1B00FB977E /* SLNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7047F41CD99B1B00FB977E /* SLNote.m */; };
 		3BB17C3D1CC7638200024581 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB17C3C1CC7638200024581 /* main.m */; };
 		3BB17C401CC7638200024581 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BB17C3F1CC7638200024581 /* AppDelegate.m */; };
 		3BB17C481CC7638200024581 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BB17C471CC7638200024581 /* Assets.xcassets */; };
@@ -107,6 +109,10 @@
 		3B7047EA1CD4916100FB977E /* note_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note_add.png; sourceTree = "<group>"; };
 		3B7047EC1CD494BD00FB977E /* SLNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLNoteCell.h; sourceTree = "<group>"; };
 		3B7047ED1CD494BD00FB977E /* SLNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNoteCell.m; sourceTree = "<group>"; };
+		3B7047EF1CD98E2C00FB977E /* SLAddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAddNoteViewController.h; sourceTree = "<group>"; };
+		3B7047F01CD98E2C00FB977E /* SLAddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAddNoteViewController.m; sourceTree = "<group>"; };
+		3B7047F31CD99B1B00FB977E /* SLNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLNote.h; sourceTree = "<group>"; };
+		3B7047F41CD99B1B00FB977E /* SLNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLNote.m; sourceTree = "<group>"; };
 		3BB17C381CC7638200024581 /* Saber Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Saber Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BB17C3C1CC7638200024581 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BB17C3E1CC7638200024581 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -282,6 +288,15 @@
 			path = Note;
 			sourceTree = "<group>";
 		};
+		3B7047F21CD99B1100FB977E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B7047F31CD99B1B00FB977E /* SLNote.h */,
+				3B7047F41CD99B1B00FB977E /* SLNote.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3BB17C2F1CC7638200024581 = {
 			isa = PBXGroup;
 			children = (
@@ -346,6 +361,7 @@
 		3BB4DE131CCDB716001382D9 /* SLNote */ = {
 			isa = PBXGroup;
 			children = (
+				3B7047F21CD99B1100FB977E /* Model */,
 				3BB4DE141CCDB716001382D9 /* Controller */,
 				3B01F9B81CD484C900869046 /* View */,
 			);
@@ -357,6 +373,8 @@
 			children = (
 				3BB4DE1E1CCDB9CC001382D9 /* SLNoteViewController.h */,
 				3BB4DE1F1CCDB9CC001382D9 /* SLNoteViewController.m */,
+				3B7047EF1CD98E2C00FB977E /* SLAddNoteViewController.h */,
+				3B7047F01CD98E2C00FB977E /* SLAddNoteViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -978,6 +996,7 @@
 				3BB4DE471CCDC353001382D9 /* SLRootMiddleViewController.m in Sources */,
 				3BEB6BB41CCF3A34006554FA /* SLNewsCell.m in Sources */,
 				3BB4DE7D1CCDF8E8001382D9 /* SLRootLeftViewController.m in Sources */,
+				3B7047F11CD98E2C00FB977E /* SLAddNoteViewController.m in Sources */,
 				3BEB6B7E1CCE68A8006554FA /* SLLoadingView.m in Sources */,
 				3BEB6BBE1CCF46C3006554FA /* SLRootLeftLogic.m in Sources */,
 				3BEB6B721CCE2695006554FA /* SLNetworking.m in Sources */,
@@ -995,6 +1014,7 @@
 				3BEB6BF91CD0544E006554FA /* SLCalendarViewController.m in Sources */,
 				3B01F9C51CD4864000869046 /* SLNavigationViewController.m in Sources */,
 				3BB4DE481CCDC353001382D9 /* SLRootRightViewController.m in Sources */,
+				3B7047F51CD99B1B00FB977E /* SLNote.m in Sources */,
 				3BBFC70E1CD3491E0053BEC1 /* SLJokeViewController.m in Sources */,
 				3B7047EE1CD494BD00FB977E /* SLNoteCell.m in Sources */,
 				3BB17C3D1CC7638200024581 /* main.m in Sources */,
