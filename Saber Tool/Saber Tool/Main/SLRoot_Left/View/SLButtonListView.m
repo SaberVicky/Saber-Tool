@@ -14,6 +14,8 @@
    
     if (self = [super initWithFrame:frame]) {
         
+        self.backgroundColor = [[UIColor alloc] initWithRed:66 / 255.0 green:166 / 255.0 blue:212 / 255.0 alpha:1];
+        
         CGFloat width = frame.size.width;
         CGFloat height = frame.size.height / titleArray.count;
         

@@ -40,7 +40,7 @@
 }
 
 - (void)setupUIWithData:(NSDictionary *)dic {
-//    _iconView.image = [UIImage imageNamed:@"jiqimao"];
+    _iconView.image = [UIImage imageNamed:[dic objectForKey:@"iconName"]];
     _infoLabel.text = [dic objectForKey:@"toolName"];
 }
 

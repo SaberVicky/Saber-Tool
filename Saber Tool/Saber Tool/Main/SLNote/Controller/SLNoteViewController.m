@@ -7,8 +7,13 @@
 //
 
 #import "SLNoteViewController.h"
+#import "SLMonthBill.h"
+#import "SLNoteCell.h"
 
-@interface SLNoteViewController ()
+@interface SLNoteViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *noteArray;
 
 @end
 
@@ -16,22 +21,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark --- Private Method
+
+- (void)setupUI {
+    
+    self.title = [NSDate stringFromDate:[NSDate date]];
+    self.view.backgroundColor = kWhiteColor;
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [self.view addSubview:_tableView];
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)addNote {
+    
 }
-*/
+
+#pragma mark --- UITableViewDelegate / DataSource
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    kWS(weakSelf);
+    SLMonthBill *headerView = [[SLMonthBill alloc] initWithFrame:CGRectMake(0, 0, kScreen_Width, 250)];
+    headerView.addBlock = ^{
+        [weakSelf addNote];
+    };
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 250;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _noteArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *resuseID = @"noteCell";
+    SLNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:resuseID];
+    if (!cell) {
+        cell = [[SLNoteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: resuseID];
+        cell.selectionStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 70;
+}
+
+#pragma mark --- Lazy Loading Method 
+
+- (NSArray *)noteArray {
+    if (!_noteArray) {
+        _noteArray =[[NSUserDefaults standardUserDefaults] objectForKey:@"kNoteUserDefault"];
+    }
+    return _noteArray;
+}
 
 @end

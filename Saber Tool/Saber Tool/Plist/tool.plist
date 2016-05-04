@@ -4,9 +4,17 @@
 <array>
 	<dict>
 		<key>vcName</key>
+		<string>SLNoteViewController</string>
+		<key>iconName</key>
+		<string>tool_note</string>
+		<key>toolName</key>
+		<string>记账本</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
 		<string>SLIdCardViewController</string>
 		<key>iconName</key>
-		<string>jiqimao</string>
+		<string>tool_idcard</string>
 		<key>toolName</key>
 		<string>身份证号码查询</string>
 	</dict>
@@ -14,7 +22,7 @@
 		<key>vcName</key>
 		<string>SLNewsViewController</string>
 		<key>iconName</key>
-		<string>jiqimao</string>
+		<string>tool_news</string>
 		<key>toolName</key>
 		<string>新闻</string>
 	</dict>
@@ -22,9 +30,25 @@
 		<key>vcName</key>
 		<string>SLCalendarViewController</string>
 		<key>iconName</key>
-		<string>jiqimao</string>
+		<string>tool_calendar</string>
 		<key>toolName</key>
 		<string>万年历</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>SLDeliveryViewController</string>
+		<key>iconName</key>
+		<string>tool_express</string>
+		<key>toolName</key>
+		<string>快递查询</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>SLJokeViewController</string>
+		<key>iconName</key>
+		<string>tool_xiaohua</string>
+		<key>toolName</key>
+		<string>笑话大全</string>
 	</dict>
 </array>
 </plist>

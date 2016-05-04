@@ -7,7 +7,10 @@
 //
 
 #import "SLBaseViewController.h"
+@class SLCalendar;
 
 @interface SLCalendarDetailViewController : SLBaseViewController
+
+- (instancetype)initWithModel:(SLCalendar *)calendar;
 
 @end

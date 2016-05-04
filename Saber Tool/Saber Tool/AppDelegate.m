@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "SLCustomTabbarViewController.h"
-#import "UMSocial.h"
-#import "UMSocialQQHandler.h"
+
+
 
 @interface AppDelegate ()
 
@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [UMSocialData setAppKey:kUMeng_appkey];
+    
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

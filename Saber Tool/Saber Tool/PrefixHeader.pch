@@ -16,6 +16,7 @@
 
 #import "UILabel+Category.h"
 #import "NSObject+Category.h"
+#import "NSDate+Category.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
@@ -32,16 +33,6 @@
 #define kClearColor                                 [UIColor clearColor]
 //白色
 #define kWhiteColor                                 [UIColor  whiteColor]
-//蓝色
-#define kBlueColor                                  kColorWithHex(@"4c97fe")
-//绿色
-#define kGreenColor                                 kColorWithHex(@"1fba3b")
-//粉色
-#define kPinkColor                                  kColorWithHex(@"fa5ea4")
-//紫色
-#define kPurpleColor                                kColorWithHex(@"b87fc8")
-//黄色
-#define kYellowColor                                kColorWithHex(@"f8f2d5")
 //黑色
 #define kBlackColor                                 [UIColor  blackColor]
 
@@ -51,6 +42,8 @@
 #define kAPI_JiSu_News           @"http://api.jisuapi.com/news/get"
 #define kAPI_JiSu_IdCard         @"http://api.jisuapi.com/idcard/query"
 #define kAPI_JiSu_Calendar       @"http://api.jisuapi.com/calendar/query"
+#define kAPI_JiSu_Joke_Pic       @"http://api.jisuapi.com/xiaohua/pic"
+#define kAPI_JiSu_Joke_Text      @"http://api.jisuapi.com/xiaohua/text"
 
 #define  kUMeng_appkey           @"57205c0667e58ed26b000130"
 

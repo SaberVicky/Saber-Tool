@@ -38,7 +38,7 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     SLRootLeftCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"noteCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
+//    cell.backgroundColor = [UIColor greenColor];
     
     [cell setupUIWithData:_rootLeftLogic.toolArray[indexPath.item]];
     return cell;
@@ -116,7 +116,6 @@
             [weakSelf.collectionView reloadData];
         }
     };
-    _popView.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark --- Private Action 

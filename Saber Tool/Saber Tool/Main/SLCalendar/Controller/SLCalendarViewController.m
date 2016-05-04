@@ -22,8 +22,8 @@
     if (self = [super init]) {
         _calendarLogic = [[SLCalendarLogic alloc] init];
         self.weekdayHeaderEnabled = YES;
-        self.firstDate = [self dateFromString:@"2011-01-01 00:00:00"];
-        self.lastDate = [self dateFromString:@"2021-01-01 00:00:00"];
+        self.firstDate = [NSDate dateFromString:@"2011-01-01 00:00:00"];
+        self.lastDate = [NSDate dateFromString:@"2021-01-01 00:00:00"];
         self.selectedDate = [NSDate date];
         [self scrollToSelectedDate:NO];
         self.delegate = self;
@@ -33,39 +33,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.title = @"万年历";
 }
 
-
+#pragma mark --- PDTSimpleCalendarViewDelegate
 
 - (void)simpleCalendarViewController:(PDTSimpleCalendarViewController *)controller didSelectDate:(NSDate *)date {
     kWS(weakSelf);
     [SLLoadingView showInView:self.view];
-    [_calendarLogic requestDateInfoWithParams:@{@"appkey": kAppKey_jiSu, @"date": [self stringFromDate:date]} andBlock:^(id data, NSError *error) {
+    [_calendarLogic requestDateInfoWithParams:@{@"appkey": kAppKey_jiSu, @"date": [NSDate stringFromDate:date]} andBlock:^(id data, NSError *error) {
         [SLLoadingView hideFromView:weakSelf.view];
         if (!error) {
-            SLCalendarDetailViewController *vc = [[SLCalendarDetailViewController alloc] init];
+            SLCalendarDetailViewController *vc = [[SLCalendarDetailViewController alloc] initWithModel:_calendarLogic.calendar];
             [weakSelf.navigationController pushViewController:vc animated:YES];
         }
     }];
 }
 
-- (NSString *)stringFromDate:(NSDate *)date{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *destDateString = [dateFormatter stringFromDate:date];
-    return destDateString;
-}
-
-- (NSDate *)dateFromString:(NSString *)dateString{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
-    NSDate *destDate= [dateFormatter dateFromString:dateString];
-    return destDate;
-}
 
 @end
